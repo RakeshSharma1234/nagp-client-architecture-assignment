@@ -1,0 +1,65 @@
+<!-- <h1>Header</h1>
+<a routerLink="/insurance-details">Search</a>
+<br>
+<a routerLink="/premium-payment">Payment</a>
+{{this.policyNo}}
+<router-outlet></router-outlet>
+
+<h1>Footer</h1> -->
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+        data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+  
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Navbar brand -->
+       
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/insurance-details" routerLinkActive="active">Insurance Details</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/premium-payment" routerLinkActive="active">Premium Payment</a>
+          </li>
+        </ul>
+        <!-- Left links -->
+      </div>
+      <!-- Collapsible wrapper -->
+  
+      <!-- Right elements -->
+      <div class="d-flex align-items-center">
+        <!-- Icon -->
+        <span class="navbar-brand mt-2 mt-lg-0" >NAGP INSURANCE</span>
+      </div>
+      <!-- Right elements -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+  
+  <div class="container vh-100">
+    <router-outlet></router-outlet>
+  </div>
+  
+  <!-- Footer -->
+  <footer class="text-center text-lg-start bg-light text-muted">
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2021 Copyright:
+      <a class="text-reset fw-bold">Nagarro.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
