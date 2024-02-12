@@ -1,4 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../../../node_modules/bootstrap/scss/functions';
+// Default variable overrides
 @import '../../../node_modules/bootstrap/scss/variables';
 @import '../../../node_modules/bootstrap/scss/bootstrap';
+
+$bgcolor: lightblue;
+$textcolor: darkblue;
+$fontsize: 18px;
+$containercolor: white;
+$textdecoration: underline;
+
+/* Use the variables */
+body {
+  background-color: $bgcolor;
+  color: $textcolor;
+  font-size: $fontsize;
+}
+
+.container {
+    background-color: $containercolor;
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+  text-decoration: $textdecoration;
+}

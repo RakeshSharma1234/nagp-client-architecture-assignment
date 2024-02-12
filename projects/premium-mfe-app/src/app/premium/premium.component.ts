@@ -13,16 +13,16 @@ export class PremiumComponent implements OnInit {
   policyNumber:string | undefined;
   policyPremium:string | undefined;
   ngOnInit(): void {
-    //  if (typeof Worker !== 'undefined') {
-    //   // Create a new
-    //   this.worker =  new Worker(new URL('../premium.worker', import.meta.url));
-    //   this.worker.onmessage = ({ data }) => {
-    //     alert(`page got message: ${data}`);
-    //   };
-    //   this.worker.postMessage(80);
-    // } else {
-    //   alert("Web workers are not supported in this environment");
-    // }
+     if (typeof Worker !== 'undefined') {
+      // Create a new
+      this.worker =  new Worker(new URL('../premium.worker', import.meta.url));
+      this.worker.onmessage = ({ data }) => {
+        alert(`page got message: ${data}`);
+      };
+      this.worker.postMessage(80);
+    } else {
+      alert("Web workers are not supported in this environment");
+    }
     this.route.queryParams.subscribe(params => {
       this.policyNumber = params['policy'];
       this.setPolicyPremium();

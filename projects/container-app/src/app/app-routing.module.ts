@@ -4,7 +4,12 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { 
-    path: "",
+    path:"",
+    redirectTo:"home",
+    pathMatch:'full'
+},
+  { 
+    path: "home",
     component: HomeComponent,
     pathMatch: 'full'
   },
@@ -15,6 +20,11 @@ const routes: Routes = [
   {
     path:"premium-payment",
     loadChildren: () => import("premiumMfeApp/PremiumModule").then(m => m.PremiumModule)
+  },
+  {
+    path: '**', 
+    redirectTo:"home",
+    pathMatch: 'full'
   }
 ];
 

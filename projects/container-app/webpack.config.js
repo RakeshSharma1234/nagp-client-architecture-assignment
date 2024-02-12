@@ -3,8 +3,8 @@ const { shareAll, withModuleFederationPlugin } = require('@angular-architects/mo
 module.exports = withModuleFederationPlugin({
 
   remotes: {
-    "insuranceMfeApp": "http://localhost:5001/remoteEntry.js",
-    "premiumMfeApp": "http://localhost:5002/remoteEntry.js",    
+    "insuranceMfeApp": "https://container-ap1.netlify.app/insurance/remoteEntry.js",
+    "premiumMfeApp": "https://container-ap1.netlify.app/premium/remoteEntry.js",    
   },
 
   shared: {
