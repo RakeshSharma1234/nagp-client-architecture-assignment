@@ -66,7 +66,7 @@
                       </table>
                 </div>
                 <div class="d-grid gap-2 col-3 mx-auto">
-                    <a class="btn btn-primary" routerLink="/premium-payment">Pay Premium</a>
+                    <a class="btn btn-primary" routerLink="/premium-payment" [queryParams]="{ policy: filteredPolicy?.policyNumber}">Pay Premium</a>
                   </div>
                   <br>
             </div>
