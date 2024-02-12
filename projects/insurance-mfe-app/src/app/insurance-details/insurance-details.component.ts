@@ -16,9 +16,6 @@ export class InsuranceDetailsComponent implements OnInit{
       this.filteredPolicy;
       return;
     }
-    let data = this.sharedLibService.getPolicy(policyNumber);
-    if(data!=null){
-      this.filteredPolicy = JSON.parse(data);
-    }
+    this.filteredPolicy  = this.sharedLibService.getPolicy(policyNumber);
   }
 }

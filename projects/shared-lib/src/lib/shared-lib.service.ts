@@ -10,18 +10,20 @@ export class SharedLibService {
     this.loadPoliciesInStorage();
    }
 
-  policies:any = insurance_policies;
-  public policyList:[] = this.policies["policies"];
 
   loadPoliciesInStorage() {
-    this.policyList.forEach(policy => {
-      localStorage.setItem(policy["policyNumber"],JSON.stringify(policy));
-    });
-     
+    localStorage.setItem("insurancePolicies",JSON.stringify(insurance_policies));
   }
 
   getPolicy(policyNumber:string) {
     let policyNo = policyNumber.toUpperCase()
-    return localStorage.getItem(policyNo);
+    let localStoragePolicies:any = localStorage.getItem("insurancePolicies");
+    let policies:any = JSON.parse(localStoragePolicies);
+    const policy = policies.filter((policy:any)=> policy["policyNumber"] === policyNo);
+    if(policy){
+    return policy[0];
+    }else{
+      alert("No Policy Found for policyNumber: "+policyNumber);
+    }
   }
 }

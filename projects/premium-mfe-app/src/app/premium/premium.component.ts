@@ -1,4 +1,5 @@
 import { Component,OnInit } from '@angular/core';
+import { SharedLibService } from '../../../../shared-lib/src/public-api';
 
 @Component({
   selector: 'app-premium',
@@ -6,8 +7,8 @@ import { Component,OnInit } from '@angular/core';
   styleUrl: './premium.component.scss'
 })
 export class PremiumComponent implements OnInit {
-  private worker: Worker | undefined;
-  result: any;
+  constructor(private sharedLibService:SharedLibService){}
+  worker: Worker | undefined;
   ngOnInit(): void {
      if (typeof Worker !== 'undefined') {
       // Create a new
