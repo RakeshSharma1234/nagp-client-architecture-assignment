@@ -32,6 +32,7 @@
             "tsConfig": "projects/container-app/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+              "projects/container-app/src/_redirects",
               "projects/container-app/src/favicon.ico",
               "projects/container-app/src/assets"
             ],
@@ -85,7 +86,8 @@
           "options": {
             "port": 4200,
             "publicHost": "http://localhost:4200",
-            "extraWebpackConfig": "projects/container-app/webpack.config.js"
+            "extraWebpackConfig": "projects/container-app/webpack.config.js",
+            "proxyConfig": "projects/container-app/src/proxy.conf.json"
           }
         },
         "extract-i18n": {
@@ -120,7 +122,7 @@
           "builder": "@netlify-builder/deploy:deploy",
           "options": {
             "outputPath": "dist/container-app",
-            "netlifyToken": "nfp_sHPdA7h5xXc5t4EYuegmZ7eSJ7LdGuyT2c7d",
+            "netlifyToken": "nfp_NjWviEKf7CZA2cEAg948jxuvTpi4FFeGc1e3",
             "siteId": "3acb0bfb-1b6a-4e63-b7c8-07ae1a847245"
           }
         }
@@ -243,7 +245,7 @@
           "builder": "@netlify-builder/deploy:deploy",
           "options": {
             "outputPath": "dist/insurance-mfe-app",
-            "netlifyToken": "nfp_sHPdA7h5xXc5t4EYuegmZ7eSJ7LdGuyT2c7d",
+            "netlifyToken": "nfp_NjWviEKf7CZA2cEAg948jxuvTpi4FFeGc1e3",
             "siteId": "244d665b-f442-436e-8e6d-05ee64a650e5"
           }
         }
@@ -368,7 +370,7 @@
           "builder": "@netlify-builder/deploy:deploy",
           "options": {
             "outputPath": "dist/premium-mfe-app",
-            "netlifyToken": "nfp_sHPdA7h5xXc5t4EYuegmZ7eSJ7LdGuyT2c7d",
+            "netlifyToken": "nfp_NjWviEKf7CZA2cEAg948jxuvTpi4FFeGc1e3",
             "siteId": "2d4c99b9-0914-4bd4-bc10-f5f3b2074377"
           }
         }
