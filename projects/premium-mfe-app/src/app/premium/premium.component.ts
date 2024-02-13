@@ -9,26 +9,30 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PremiumComponent implements OnInit {
   constructor(private sharedLibService:SharedLibService, private route: ActivatedRoute){}
-  worker: Worker | undefined;
+  workerResult: any;
   policyNumber:string | undefined;
   policyPremium:string | undefined;
   ngOnInit(): void {
-     if (typeof Worker !== 'undefined') {
-      // Create a new
-      this.worker =  new Worker(new URL('../premium.worker', import.meta.url));
-      this.worker.onmessage = ({ data }) => {
-        alert(`page got message: ${data}`);
-      };
-      this.worker.postMessage(80);
-    } else {
-      alert("Web workers are not supported in this environment");
-    }
     this.route.queryParams.subscribe(params => {
       this.policyNumber = params['policy'];
       this.setPolicyPremium();
     });
   }
   
+  // Web Worker Integration
+  generatePremiumWorkerResponse(userInput: any){
+    if (isNaN(userInput)) {
+      alert('Not a Number!');
+      this.workerResult = '';
+      return;
+    }
+    const worker = new Worker(new URL('./premium.worker', import.meta.url));
+    worker.onmessage = ({ data }) => {
+      this.workerResult = data;
+    };  
+    worker.postMessage(userInput);
+  }
+
   setPolicyPremium():void {
     if(this.policyNumber && this.policyNumber.length > 0){
       if(this.sharedLibService.getPolicy(this.policyNumber)){

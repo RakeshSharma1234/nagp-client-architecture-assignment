@@ -4,7 +4,7 @@
         <div class="col">
         </div>
         <div class="col text-center col-md-7">
-            <h3>Pay Policy Premium (Premium MFE)</h3>
+            <h3>Pay Policy Premium (Premium MicroFrontend)</h3>
         </div>
         <div class="col ">
         </div>
@@ -13,12 +13,12 @@
     <div class="row">
         <div class="col ">
         </div>
-        <div class="col-md-7">
+        <div class="col-md-5">
             <div class="card mb-4">
-                <div class="card-header bg-info"><b> Premium Payment </b></div>
+                <div class="card-header bg-info"><b> Policy Premium Payment </b></div>
                 <div class="card-body">
                     <div class="row mt-8">
-                        <div class="col-md-12"><label class="labels">Policy Number</label><input class="form-control" placeholder="Enter policy number" [(ngModel)]="policyNumber" (change)="setPolicyPremium()"></div>
+                        <div class="col-md-12"><label class="labels">Policy Number (PL1 to PL100)</label><input class="form-control" placeholder="Enter policy number" [(ngModel)]="policyNumber" (change)="setPolicyPremium()"></div>
                     </div>
                     <div class="row mt-3">
                         <div class="col-md-12"><label class="labels">Premium Amount</label><input type="text" class="form-control" placeholder="Enter premium amount"  [(ngModel)]="policyPremium"></div>
@@ -26,6 +26,24 @@
                     <div class="mt-5 text-center"><button class="btn btn-success profile-button" type="button" (click)="payment()">Payment</button></div>    
                 </div>
                 
+            </div>
+        </div>
+        <div class="col ">
+        </div>
+        <div class="col-md-5">
+            <div class="card mb-4">
+                <div class="card-header bg-info"><b> WebWorker Factorial Integration </b></div>
+                <div class="card-body">
+                    <div class="row mt-8">
+                        <div class="col-md-12"><label class="labels">Web Worker Input</label>
+                            <input class="form-control" placeholder="Enter Number" #webWorkerInput></div>
+                    </div>
+                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button" (click)="generatePremiumWorkerResponse(webWorkerInput.value)">Calculate</button></div>
+                    <br>
+                    <div *ngIf="workerResult"><b>Worker Response:</b> {{workerResult}}</div>    
+                </div>
+                
+                <br/>
             </div>
         </div>
         <div class="col ">

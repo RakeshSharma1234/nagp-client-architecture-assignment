@@ -6,7 +6,7 @@
 
 $bgcolor: lightblue;
 $textcolor: darkblue;
-$fontsize: 18px;
+$fontsize: 16px;
 $containercolor: white;
 $textdecoration: underline;
 
@@ -23,4 +23,9 @@ body {
 
 .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
   text-decoration: $textdecoration;
+}
+
+.navbar-nav .nav-link, .navbar-nav .nav-link.show {
+  color: whitesmoke;
+  font-weight: bold;
 }

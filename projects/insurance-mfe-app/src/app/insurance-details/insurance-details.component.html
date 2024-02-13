@@ -4,7 +4,7 @@
         <div class="col">
         </div>
         <div class="col col-8 text-center">
-            <h3>Find Your Policy Details(Insurance MFE)</h3>
+            <h3>Find Your Policy Details(Insurance MicroFrontend)</h3>
         </div>
         <div class="col ">
         </div>
@@ -13,7 +13,14 @@
       <div class="col ">
       </div>
       <div class="col col-8">
-       
+        Policy Number (PL1 to PL100):
+      </div>
+      <div class="col ">
+      </div>
+    <div class="row">
+      <div class="col ">
+      </div>
+      <div class="col col-8">
         <div class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Enter Policy Number" aria-label="Search" #filter (keydown.enter)="filterResults(filter.value)">
             <button class="btn btn-secondary" type="button" (click)="filterResults(filter.value)">Search</button>
@@ -22,6 +29,7 @@
       <div class="col">
       </div>
     </div>
+    <br>
     <br>
     <div class="row" *ngIf="filteredPolicy">
         <div class="col ">
@@ -36,11 +44,11 @@
                             <th scope="row">Policy Number:</th>
                             <td>{{filteredPolicy?.policyNumber}}</td>
                             <th scope="row">Policy Premium:</th>
-                            <td>{{filteredPolicy?.premium}}</td>
+                            <td>{{filteredPolicy?.premium | currency }}</td>
                           </tr>
                           <tr>
                             <th scope="row">Coverage Amount:</th>
-                            <td>{{filteredPolicy?.coverage?.amount}}</td>
+                            <td>{{filteredPolicy?.coverage?.amount | currency}}</td>
                             <th scope="row">Coverage Type:</th>
                             <td>{{filteredPolicy?.coverage?.type}}</td>
                           </tr>
