@@ -11,15 +11,18 @@ const routes: Routes = [
   { 
     path: "home",
     component: HomeComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    title: 'Container-Home'
   },
   {
     path:"insurance-details",
-    loadChildren: () => import("insuranceMfeApp/InsuranceDetailsModule").then(m => m.InsuranceDetailsModule)
+    loadChildren: () => import("insuranceMfeApp/InsuranceDetailsModule").then(m => m.InsuranceDetailsModule),
+    title: 'Container-Insurance'
   },
   {
     path:"premium-payment",
-    loadChildren: () => import("premiumMfeApp/PremiumModule").then(m => m.PremiumModule)
+    loadChildren: () => import("premiumMfeApp/PremiumModule").then(m => m.PremiumModule),
+    title: 'Container-Premium'
   },
   {
     path: '**', 

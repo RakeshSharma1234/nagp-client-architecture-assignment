@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="border-style: solid">
     <br>
     <div class="row">
         <div class="col">
@@ -30,17 +30,22 @@
         </div>
         <div class="col ">
         </div>
-        <div class="col-md-5">
+        <div class="col-md-6">
             <div class="card mb-4">
                 <div class="card-header bg-info"><b> WebWorker Factorial Integration </b></div>
                 <div class="card-body">
                     <div class="row mt-8">
-                        <div class="col-md-12"><label class="labels">Web Worker Input</label>
-                            <input class="form-control" placeholder="Enter Number" #webWorkerInput></div>
+                        <div class=" text-center">Generating factorials from 1 to 70 thousand. This task is CPU intensive, so using a web worker to compute it efficiently in the background.</div>
+                        <div class=" text-center"><b>Please wait until the factorials generated!</b></div>
                     </div>
-                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button" (click)="generatePremiumWorkerResponse(webWorkerInput.value)">Calculate</button></div>
+                    <div class="row mt-8">
+                        <div class="text-center"><button class="btn btn-primary profile-button" type="button" (click)="generatePremiumWorkerResponse()">Calculate Factorials</button></div>
+                    </div>
                     <br>
-                    <div *ngIf="workerResult"><b>Worker Response:</b> {{workerResult}}</div>    
+                    <div *ngIf="workerResult">
+                     <b>Worker Response:</b>
+                    <div style="overflow:scroll; height:100px;"> {{workerResult}}</div>
+                    </div>    
                 </div>
                 
                 <br/>

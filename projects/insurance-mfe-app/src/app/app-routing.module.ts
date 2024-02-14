@@ -5,13 +5,14 @@ import { InsuranceDetailsComponent } from './insurance-details/insurance-details
 const routes: Routes = [
   { 
     path:"",
-    redirectTo:"insurance-details-mfe",
+    component: InsuranceDetailsComponent,
     pathMatch:'full'
 
 },
 {
-    path:"insurance-details-mfe",
-    component: InsuranceDetailsComponent
+  path: '**', 
+  redirectTo:"",
+  pathMatch: 'full'
 }
 ];
 

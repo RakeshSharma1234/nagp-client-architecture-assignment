@@ -16,19 +16,23 @@
         <!-- Left links -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+            <a class="nav-link" routerLink="/home" routerLinkActive="active" (click)="resetCustomEventData()">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/insurance-details" routerLinkActive="active">Insurance Details</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/premium-payment" routerLinkActive="active">Premium Payment</a>
+            <a class="nav-link" routerLink="/premium-payment" routerLinkActive="active" (click)="resetCustomEventData()">Premium Payment</a>
           </li>
         </ul>
         <!-- Left links -->
       </div>
       <!-- Collapsible wrapper -->
-  
+      
+      <div class="d-flex align-items-center" *ngIf="customEventData && (customEventData | json) != '{}'">
+        <!-- Icon -->
+        <span class=" mt-2 mt-lg-0" ><b> CustomEvents:{{customEventData|json}}</b></span>
+      </div>
       <!-- Right elements -->
       <div class="d-flex align-items-center">
         <!-- Icon -->
@@ -39,11 +43,16 @@
     <!-- Container wrapper -->
   </nav>
   <!-- Navbar -->
-  
-  <div class="container vh-100">
+  <br/>
+  <div class="bg-container">
     <router-outlet></router-outlet>
+    <br>
+    <div class="d-grid gap-2 col-3 mx-auto" *ngIf="customEventData && (customEventData | json) != '{}'">
+      <a class="btn btn-primary" routerLink="/premium-payment" [queryParams]="{ policy: customEventData?.policyNumber}" (click)="resetCustomEventData()">Pay Premium</a>
+      (This Pay Premium link is also getting the policyNumber from insurance MicroFrontend via custom events.)
+    </div>
   </div>
-  
+  <br/>
   <!-- Footer -->
   <footer class="text-center text-lg-start bg-light text-muted">
     <!-- Copyright -->

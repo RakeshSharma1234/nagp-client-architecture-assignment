@@ -20,17 +20,12 @@ export class PremiumComponent implements OnInit {
   }
   
   // Web Worker Integration
-  generatePremiumWorkerResponse(userInput: any){
-    if (isNaN(userInput)) {
-      alert('Not a Number!');
-      this.workerResult = '';
-      return;
-    }
+  generatePremiumWorkerResponse(){
     const worker = new Worker(new URL('./premium.worker', import.meta.url));
     worker.onmessage = ({ data }) => {
       this.workerResult = data;
     };  
-    worker.postMessage(userInput);
+    worker.postMessage(70000);
   }
 
   setPolicyPremium():void {

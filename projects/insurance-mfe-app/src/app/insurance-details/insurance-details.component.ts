@@ -13,9 +13,17 @@ export class InsuranceDetailsComponent implements OnInit{
 
   filterResults(policyNumber: string) {
     if (!policyNumber) {
-      this.filteredPolicy;
+      this.filteredPolicy=undefined;
+      this.sendCustomEvents();
       return;
     }
     this.filteredPolicy  = this.sharedLibService.getPolicy(policyNumber);
+    this.sendCustomEvents();
+  }
+
+  sendCustomEvents(){
+        // sending custom events to container app
+        const event = new CustomEvent('event', { detail:{policyNumber:this.filteredPolicy?.policyNumber, holderName:this.filteredPolicy?.policyHolder?.name} });
+        dispatchEvent(event);
   }
 }

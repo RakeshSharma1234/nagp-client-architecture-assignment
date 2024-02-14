@@ -1,18 +1,21 @@
 /// <reference lib="webworker" />
 
 addEventListener('message', ({data}) => {
+  const result:Number[]=[];
   // Perform heavy computations
-  const result = factorialCalculator(data);
+  for (let i = 1; i < data; i++) {
+    let fact = factorialCalculator(i);
+    result.push(fact);
+  }
   postMessage(result);
 });
 
 function factorialCalculator(num:number):number {
   // Your heavy computation logic here
-  if (num < 0) {
-    return -1;
-  } else if (num == 0) {
-    return 1;
-  } else {
-    return (num * factorialCalculator(num - 1));
+  let factorial = 1;
+
+  for(let i = 1; i <= num; i++) {
+    factorial *= i;
   }
+  return factorial;
 }

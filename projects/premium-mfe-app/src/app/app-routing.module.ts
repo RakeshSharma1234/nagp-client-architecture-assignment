@@ -6,13 +6,14 @@ import { PremiumComponent } from './premium/premium.component';
 const routes: Routes = [
   { 
     path:"",
-    redirectTo:"premium-mfe",
+    component:PremiumComponent,
     pathMatch:'full'
 
   },
   {
-      path:"premium-mfe",
-      component:PremiumComponent
+    path: '**', 
+    redirectTo:"",
+    pathMatch: 'full'
   }
 ];
 

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="border-style: solid">
     <br>
     <div class="row">
         <div class="col">
@@ -9,6 +9,15 @@
         <div class="col ">
         </div>
     </div>
+    <div class="row">
+      <div class="col">
+      </div>
+      <div class="col col-10 text-center">
+          <h6>(Search policy will also shared the data to container application via custom events which will be visible in header.)</h6>
+      </div>
+      <div class="col ">
+      </div>
+  </div>
     <div class="row">
       <div class="col ">
       </div>
@@ -73,10 +82,6 @@
                         </tbody>
                       </table>
                 </div>
-                <div class="d-grid gap-2 col-3 mx-auto">
-                    <a class="btn btn-primary" routerLink="/premium-payment" [queryParams]="{ policy: filteredPolicy?.policyNumber}">Pay Premium</a>
-                  </div>
-                  <br>
             </div>
         </div>
         <div class="col">
